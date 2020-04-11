@@ -1,2 +1,30 @@
-<h1>Users#signup_form</h1>
-<p>Find me in app/views/users/signup_form.html.erb</p>
+<h1>新規登録</h1>
+<div class="signup-notice">
+    <h2>はじめに</h2>
+    <p>まず<%= link_to("利用規約", "/terms") %>および<%= link_to("プライバシーポリシー", "/privacy") %>をお読みください。</p>
+    <div class="signup-form-big-container">
+        <div class="signup-form-small-container">
+            <%= form_tag("/signup", class:"signup-form") do %>
+            <h3>ユーザー名<span class="small">（必須）</span></h3>
+            <input type="text" name="name">
+            <h3 style="margin-top: 20px">メールアドレス<span class="small">（必須）</span></h3>
+            <input type="email" name="email">
+            <h3 style="margin-top: 20px">パスワード<span class="small">（8字以上32字以内）</span></h3>
+            <input type="password" name="password">
+            <h3 style="margin-top: 20px">パスワード<span class="small">（確認用）</span></h3>
+            <input type="password" name="password-confirmation">
+            <input type="submit" value="新規登録">
+            <% end %>
+        </div>
+        <div class="signup-form-small-container">
+            <div class="signup-form">
+                <%= link_to("/", class: "sns twitter") do %>
+                <i class="fab fa-twitter"></i> Twitterでログイン
+                <% end %>
+                <%= link_to("/", class: "sns github", style: "margin-top:20px") do %>
+                <i class="fab fa-github"></i> GitHubでログイン
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div>
