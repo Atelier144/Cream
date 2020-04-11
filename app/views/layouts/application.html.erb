@@ -1,15 +1,95 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Cream</title>
+
+<head>
+    <%= display_meta_tags(default_meta_tags) %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= javascript_pack_tag 'application' %>
+</head>
 
-  <body>
+<body>
+    <header>
+        <%= link_to("", "/", class: "logo") %>
+        <ul class="header-menu">
+            <li>
+                <%= link_to("プロジェクト", "/") %>
+            </li>
+            <li>
+                <%= link_to("ユーザー", "/") %>
+            </li>
+            <li>
+                <%= link_to("ボード", "/") %>
+            </li>
+        </ul>
+        <%= form_tag("/", class: "header-search", method: "GET") do %>
+        <input type="text" name="content" placeholder="検索">
+        <button type="submit"><i class="fas fa-search"></i></button>
+        <% end %>
+
+        <% if false %>
+        <%= link_to("新規プロジェクト", "/", class:"new-project") %>
+        <div class="header-user-image">
+            <%= image_tag("NoUserImage.png") %>
+        </div>
+        <% else %>
+        <%= link_to("ログイン", "/" , class:"login", style: "right: 125px") %>
+        <%= link_to("新規登録", "/" , class:"login", style: "right: 10px") %>
+        <% end %>
+        <div class="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+        <div class="pulldown-menu">
+            <ul class="main-menu">
+                <li>
+                    <%= link_to("プロジェクト", "/") %>
+                </li>
+                <li>
+                    <%= link_to("ユーザー", "/") %>
+                </li>
+                <li>
+                    <%= link_to("ボード", "/") %>
+                </li>
+            </ul>
+            <%= form_tag("/", class: "pulldown-menu-search", method: "GET") do %>
+            <input type="text" name="content" placeholder="検索">
+            <button type="submit"><i class="fas fa-search"></i></button>
+            <% end %>
+            <div class="user-box">
+                <ul class="user-menu">
+                    <li>
+                        <%= link_to("ログイン", "/") %>
+                    </li>
+                    <li>
+                        <%= link_to("新規登録", "/") %>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
     <%= yield %>
-  </body>
+    <footer>
+        <ul class="menu">
+            <li>
+                <%= link_to("ホーム", "/") %>
+            </li>
+            <li>
+                <%= link_to("利用規約", "/") %>
+            </li>
+            <li>
+                <%= link_to("プライバシーポリシー", "/") %>
+            </li>
+            <li>
+                <%= link_to("お問い合わせ", "/")%>
+            </li>
+        </ul>
+        <h6>公式Twitterアカウント</h6>
+        <a class="twitter" href="https://twitter.com/AkioMabuchi" target="_blank"><i class="fab fa-twitter"></i></a>
+        <address>Copyright <i class="far fa-copyright"></i> 2020 Cream All Rights Reserved.</address>
+    </footer>
+</body>
+
 </html>
