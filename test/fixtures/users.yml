@@ -1,0 +1,39 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  permalink: MyString
+  name: MyString
+  is_certificated: false
+  email: MyString
+  new_email: MyString
+  password_digest: MyString
+  image: MyString
+  url: MyString
+  twitter_uid: MyString
+  twitter_url: MyString
+  twitter_token: MyString
+  twitter_token_secret: MyString
+  github_uid: MyString
+  github_url: MyString
+  description: MyString
+  location: MyString
+  birth: MyString
+
+two:
+  permalink: MyString
+  name: MyString
+  is_certificated: false
+  email: MyString
+  new_email: MyString
+  password_digest: MyString
+  image: MyString
+  url: MyString
+  twitter_uid: MyString
+  twitter_url: MyString
+  twitter_token: MyString
+  twitter_token_secret: MyString
+  github_uid: MyString
+  github_url: MyString
+  description: MyString
+  location: MyString
+  birth: MyString

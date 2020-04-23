@@ -1,0 +1,13 @@
+<%= form_tag("/auth/twitter/callback/done", class: "callback-form") do %>
+  <h1>ただいま、Twitterと連携中です</h1>
+  <label><input type="text" name="provider" value="<%= @provider %>"></label>
+  <label><input type="text" name="uid" value="<%= @uid %>"></label>
+  <label><input type="text" name="name" value="<%= @name %>"></label>
+  <label><input type="text" name="image" value="<%= @image %>"></label>
+  <label><input type="text" name="description" value="<%= @description %>"></label>
+  <label><input type="text" name="url" value="<%= @url %>"></label>
+  <label><input type="text" name="twitter_url" value="<%= @twitter_url %>"></label>
+  <label><input type="text" name="location" value="<%= @location %>"></label>
+  <label><input type="text" name="access_token" value="<%= @access_token %>"></label>
+  <label><input type="text" name="access_token_secret" value="<%= @access_token_secret %>"></label>
+<% end %>
