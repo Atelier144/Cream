@@ -11,6 +11,13 @@
 </head>
 
 <body>
+<% if @current_user %>
+  <%= react_component("HeaderUser", {user: @current_user.as_json(only:[:name, :image])}) %>
+<% else %>
+  <%= react_component("HeaderGuest") %>
+<% end %>
+
+<!--
 <header>
   <%= link_to("", "/", class: "logo") %>
   <ul class="header-menu">
@@ -24,15 +31,16 @@
       <%= link_to("ボード", "/") %>
     </li>
   </ul>
+
   <%= form_tag("/", class: "header-search", method: "GET") do %>
     <input type="text" name="content" placeholder="検索">
     <button type="submit"><i class="fas fa-search"></i></button>
   <% end %>
 
-  <% if false %>
+  <% if @current_user %>
     <%= link_to("新規プロジェクト", "/", class: "new-project") %>
     <div class="header-user-image">
-      <%= image_tag("NoUserImage.png") %>
+      <%= image_tag(@current_user.image.url) %>
     </div>
   <% else %>
     <%= link_to("ログイン", "/login", class: "login", style: "right: 125px") %>
@@ -69,6 +77,7 @@
     </div>
   </div>
 </header>
+--->
 <%= yield %>
 <footer>
   <ul class="menu">

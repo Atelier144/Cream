@@ -1,2 +1,37 @@
-<h1>Users#skillset_form</h1>
-<p>Find me in app/views/users/skillset_form.html.erb</p>
+<h1>アカウント設定</h1>
+<div class="setting-form-big-container">
+  <div class="setting-form-small-container" style="max-width: 300px">
+    <ul class="setting-menu-desktop">
+      <li>
+        <a href="/settings/profile">プロフィール設定</a>
+      </li>
+      <li>
+        <a href="/settings/skills">スキルセット設定</a>
+      </li>
+      <li>
+        <a href="/">ポートフォリオ設定</a>
+      </li>
+      <li>
+        <a href="/">招待設定</a>
+      </li>
+      <li>
+        <a href="/">メールアドレス設定</a>
+      </li>
+      <li>
+        <a href="/">パスワード設定</a>
+      </li>
+      <li>
+        <a href="/">SNS設定</a>
+      </li>
+      <li>
+        <a href="/">退会</a>
+      </li>
+    </ul>
+  </div>
+  <div class="setting-form-small-container" style="max-width: 500px">
+    <div class="setting-form">
+      <h2>スキルセット設定</h2>
+      <%= react_component("SettingSkills", {skills: @skills}) %>
+    </div>
+  </div>
+</div>

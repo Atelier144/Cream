@@ -21,18 +21,6 @@ import '../stylesheets/application';
 import "@fortawesome/fontawesome-free/js/all"
 
 $(document).ready(function () {
-    $("header .hamburger").click(function () {
-        if ($(this).hasClass("open")) {
-            $(this).html('<i class="fas fa-bars"><i>');
-            $(this).removeClass("open");
-            $("header .pulldown-menu").slideUp();
-        } else {
-            $(this).addClass("open");
-            $(this).html('<i class="fas fa-times"><i>');
-            $("header .pulldown-menu").slideDown();
-        }
-    });
-
     $(".callback-form input[type=submit]").click();
 });
 // Support component names relative to this directory:
